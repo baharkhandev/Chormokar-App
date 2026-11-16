@@ -1,0 +1,19 @@
+node_modules
+.next
+.git
+.gitignore
+.github
+.vscode
+graphify-out
+coverage
+*.log
+.DS_Store
+
+# Never ship secrets in the build context. NEXT_PUBLIC_* values are passed as
+# build args; runtime secrets come from the compose environment.
+.env
+.env.*
+!.env.example
+
+Dockerfile
+docker-compose*.yml

@@ -1,0 +1,36 @@
+services:
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.chormokar.com/api/v1}
+        NEXT_PUBLIC_MEDIA_BASE_URL: ${NEXT_PUBLIC_MEDIA_BASE_URL:-https://media.chormokar.com}
+        NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-https://chormokar.com}
+    image: chormokar-admin:latest
+    container_name: chormokar_admin_prod
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${ADMIN_PORT:-5555}:5555"
+    environment:
+      NODE_ENV: production
+      PORT: "5555"
+      HOSTNAME: 0.0.0.0
+      NEXT_TELEMETRY_DISABLED: "1"
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.chormokar.com/api/v1}
+      NEXT_PUBLIC_MEDIA_BASE_URL: ${NEXT_PUBLIC_MEDIA_BASE_URL:-https://media.chormokar.com}
+      NEXT_PUBLIC_STOREFRONT_URL: ${NEXT_PUBLIC_STOREFRONT_URL:-https://chormokar.com}
+      INTERNAL_API_URL: ${INTERNAL_API_URL:-https://api.chormokar.com/api/v1}
+      REVALIDATE_SECRET: ${REVALIDATE_SECRET:-}
+      ADMIN_DEV_AUTO_AUTH: "false"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:5555/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
