@@ -27,7 +27,7 @@ function resolveImageUrl(raw: string | null | undefined): string | null {
   if (raw.startsWith('http://') || raw.startsWith('https://') || raw.startsWith('blob:')) {
     return raw.startsWith('blob:') ? raw : mediaUrl(raw);
   }
-  const backendBase = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace('/api/v1', '');
+  const backendBase = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001').replace('/api/v1', '');
   return `${backendBase}${raw.startsWith('/') ? '' : '/'}${raw}`;
 }
 

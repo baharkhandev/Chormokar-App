@@ -10,7 +10,7 @@ function resolveBrandLogo(url: string | null | undefined): string {
   if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('blob:')) {
     return url;
   }
-  const backendBase = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace('/api/v1', '');
+  const backendBase = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001').replace('/api/v1', '');
   return `${backendBase}${url.startsWith('/') ? '' : '/'}${url}`;
 }
 

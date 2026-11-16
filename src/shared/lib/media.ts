@@ -1,7 +1,7 @@
 /**
  * Media host mapping.
  *
- * The API can return local media paths (e.g. http://localhost:8000/media/...).
+ * The API can return local media paths (e.g. http://localhost:8001/media/...).
  * When media lives in Cloudflare R2, rewrite those to the public media domain
  * so the admin console always loads the real asset.
  */

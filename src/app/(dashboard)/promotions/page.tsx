@@ -24,7 +24,7 @@ import { useAdminAuth } from '../../../shared/auth/AuthContext';
 import { revalidateStorefront } from '../../../shared/api/revalidateStorefront';
 import { FlashDealsPanel, BestSellersPanel } from './panels';
 
-const STOREFRONT_URL = process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3000';
+const STOREFRONT_URL = process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3001';
 
 interface SaleProduct {
   id: string;

@@ -20,7 +20,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-The dashboard runs on [http://localhost:3001](http://localhost:3001).
+The dashboard runs on [http://localhost:3002](http://localhost:3002).
 
 ## Environment
 
@@ -34,11 +34,13 @@ Copy `.env.example` to `.env.local` and set:
 | `INTERNAL_API_URL` | Server-to-server API URL (optional) |
 | `REVALIDATE_SECRET` | Shared secret for storefront cache revalidation |
 
+Local defaults: storefront `http://localhost:3001`, backend `http://localhost:8001`.
+
 ## Scripts
 
 | Command | Description |
 | --- | --- |
-| `npm run dev` | Start the development server on port 3001 |
+| `npm run dev` | Start the development server on port 3002 |
 | `npm run build` | Production build |
 | `npm start` | Run the production build |
 | `npm run typecheck` | TypeScript checks |
@@ -54,6 +56,6 @@ The Chormokar palette and logo assets live in:
 
 ## Deployment
 
-A multi-stage `Dockerfile` and `docker-compose.prod.yml` are included. The app is also
-compatible with PM2 via `ecosystem.config.cjs` and with Vercel (set the project root to this
-repository).
+A multi-stage `Dockerfile` and `docker-compose.prod.yml` are included; both expose port 3002.
+The app is also compatible with PM2 via `ecosystem.config.cjs` and with Vercel (set the project
+root to this repository).

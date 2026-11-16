@@ -26,7 +26,7 @@ import { revalidateStorefront } from '../../../shared/api/revalidateStorefront';
 import { mediaUrl } from '../../../shared/lib/media';
 import { optimizeImageForUpload } from '../../../shared/lib/image-upload';
 
-const STOREFRONT_URL = (process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3000').replace(
+const STOREFRONT_URL = (process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3001').replace(
   /\/$/,
   ''
 );

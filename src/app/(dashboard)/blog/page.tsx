@@ -12,7 +12,7 @@ import { apiErrorMessage } from '../../../shared/api/errorMessage';
 import { revalidateStorefront } from '../../../shared/api/revalidateStorefront';
 import type { BlogPost } from './BlogForm';
 
-const STOREFRONT_URL = process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3000';
+const STOREFRONT_URL = process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3001';
 
 function formatDate(value: string | null): string {
   if (!value) return '—';

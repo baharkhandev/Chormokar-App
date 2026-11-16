@@ -6,7 +6,7 @@ import { NextResponse } from 'next/server';
  */
 export async function POST(request: Request) {
   const secret = process.env.REVALIDATE_SECRET;
-  const storefront = (process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3000').replace(
+  const storefront = (process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3001').replace(
     /\/$/,
     ''
   );

@@ -1,7 +1,7 @@
 const API_URL =
   process.env.INTERNAL_API_URL ||
   process.env.NEXT_PUBLIC_API_URL ||
-  'http://localhost:8000/api/v1';
+  'http://localhost:8001/api/v1';
 
 export interface TokenRefreshResult {
   accessToken: string;

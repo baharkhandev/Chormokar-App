@@ -4,7 +4,7 @@ import { refreshAdminSession } from '../auth/serverTokenRefresh';
 const API_URL =
   process.env.INTERNAL_API_URL ||
   process.env.NEXT_PUBLIC_API_URL ||
-  'http://localhost:8000/api/v1';
+  'http://localhost:8001/api/v1';
 
 export function getBackendAuthToken(request: NextRequest): string | null {
   const authHeader = request.headers.get('authorization');

@@ -187,7 +187,7 @@ export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
               </Link>
 
               <a
-                href={process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:4444'}
+                href={process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3001'}
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setIsDropdownOpen(false)}

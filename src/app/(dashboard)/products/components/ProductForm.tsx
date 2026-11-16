@@ -61,7 +61,7 @@ interface ProductFormProps {
   specSuggestions?: Array<{ label: string; value: string; shop?: string; section?: string }>;
 }
 
-const STOREFRONT_URL = (process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3000').replace(
+const STOREFRONT_URL = (process.env.NEXT_PUBLIC_STOREFRONT_URL || 'http://localhost:3001').replace(
   /\/$/,
   ''
 );
@@ -158,7 +158,7 @@ function resolveImageUrl(raw: string): string {
   if (raw.startsWith('http://') || raw.startsWith('https://') || raw.startsWith('blob:')) {
     return raw.startsWith('blob:') ? raw : mediaUrl(raw);
   }
-  const backendBase = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace('/api/v1', '');
+  const backendBase = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001').replace('/api/v1', '');
   return `${backendBase}${raw.startsWith('/') ? '' : '/'}${raw}`;
 }
 
